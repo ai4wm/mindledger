@@ -74,6 +74,10 @@ memsearch config list          # show all settings
 memsearch config get milvus.uri  # show specific value
 ```
 
+## Display Defaults
+
+Human-facing timestamps default to `Asia/Seoul` with `ko-KR` as the display locale. Storage and state timestamps stay UTC unless a higher layer formats them differently.
+
 ## Plugin Summarization Routing
 
 Plugins keep their existing native/default summarizer unless you set a

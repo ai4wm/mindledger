@@ -29,6 +29,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from opencode_turns import (
     build_turns,
@@ -308,8 +309,9 @@ def write_capture(
     """Write a captured turn to the daily memory file."""
     os.makedirs(memory_dir, exist_ok=True)
 
-    today = datetime.now().strftime("%Y-%m-%d")
-    now = datetime.now().strftime("%H:%M")
+    local_now = datetime.now(ZoneInfo("Asia/Seoul"))
+    today = local_now.strftime("%Y-%m-%d")
+    now = local_now.strftime("%H:%M")
     memory_file = os.path.join(memory_dir, f"{today}.md")
 
     if not os.path.exists(memory_file):

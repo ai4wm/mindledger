@@ -72,6 +72,12 @@ class RerankerConfig:
 
 
 @dataclass
+class DisplayConfig:
+    timezone: str = "Asia/Seoul"
+    locale: str = "ko-KR"
+
+
+@dataclass
 class LLMConfig:
     """LLM settings for memsearch-managed summarization jobs.
 
@@ -164,6 +170,7 @@ class MemSearchConfig:
     chunking: ChunkingConfig = field(default_factory=ChunkingConfig)
     watch: WatchConfig = field(default_factory=WatchConfig)
     reranker: RerankerConfig = field(default_factory=RerankerConfig)
+    display: DisplayConfig = field(default_factory=DisplayConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
     prompts: PromptsConfig = field(default_factory=PromptsConfig)
     plugins: PluginsConfig = field(default_factory=PluginsConfig)
@@ -177,6 +184,7 @@ _SECTION_CLASSES: dict[str, type] = {
     "chunking": ChunkingConfig,
     "watch": WatchConfig,
     "reranker": RerankerConfig,
+    "display": DisplayConfig,
     "llm": LLMConfig,
     "prompts": PromptsConfig,
     "plugins": PluginsConfig,

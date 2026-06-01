@@ -31,6 +31,8 @@ def test_default_config():
     assert cfg.chunking.max_chunk_size == 1500
     assert cfg.chunking.overlap_lines == 2
     assert cfg.watch.debounce_ms == 1500
+    assert cfg.display.timezone == "Asia/Seoul"
+    assert cfg.display.locale == "ko-KR"
     assert cfg.compact.llm_provider == "openai"
     assert cfg.llm.providers == {}
     assert cfg.plugins.claude_code.summarize.provider == ""

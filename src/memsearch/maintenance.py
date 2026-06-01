@@ -24,6 +24,7 @@ from .config import (
     config_to_dict,
     resolve_env_ref,
 )
+from .timefmt import utc_now_iso
 
 TASKS = ("project_review", "user_profile")
 MAX_PROMPT_CHARS = 80_000
@@ -571,4 +572,4 @@ def _file_lock(path: Path):
 
 
 def _now() -> str:
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    return utc_now_iso()
