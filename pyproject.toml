@@ -49,6 +49,8 @@ all = ["memsearch[google,voyage,jina,mistral,ollama,local,anthropic,onnx]"]
 
 [project.scripts]
 memsearch = "memsearch.cli:cli"
+mindledger = "memsearch.cli:cli"
+mind = "memsearch.cli:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/memsearch"]
