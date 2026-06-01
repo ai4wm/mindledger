@@ -43,3 +43,11 @@ def test_chunk_size_flag_appears_in_help(args: list[str]) -> None:
 
     assert result.exit_code == 0
     assert "--max-chunk-size" in result.output
+
+
+def test_index_no_stale_cleanup_flag_appears_in_help() -> None:
+    runner = CliRunner()
+    result = runner.invoke(cli, ["index", "--help"])
+
+    assert result.exit_code == 0
+    assert "--no-stale-cleanup" in result.output
