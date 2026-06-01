@@ -1,11 +1,11 @@
 <h1 align="center">
   <img src="assets/logo-icon.jpg" alt="" width="100" valign="middle">
   &nbsp;
-  memsearch
+  mindledger
 </h1>
 
 <p align="center">
-  <strong>Cross-platform semantic memory for AI coding agents.</strong>
+  <strong>Personal memory OS for AI agents and human-readable long-term memory.</strong>
 </p>
 
 <p align="center">
@@ -27,12 +27,18 @@
   <img src="https://github.com/user-attachments/assets/427b7152-bc16-408c-a8b0-59a2b05fd1e0" alt="memsearch demo" width="800">
 </p>
 
-### Why memsearch?
+### Why MindLedger?
 
 - 🌐 **All Platforms, One Memory** — memories flow across [Claude Code](plugins/claude-code/README.md), [OpenClaw](plugins/openclaw/README.md), [OpenCode](plugins/opencode/README.md), and [Codex CLI](plugins/codex/README.md). A conversation in one agent becomes searchable context in all others — no extra setup
 - 👥 **For Agent Users**, install a plugin and get persistent memory with zero effort; **for Agent Developers**, use the full [CLI](https://zilliztech.github.io/memsearch/cli/) and [Python API](https://zilliztech.github.io/memsearch/python-api/) to build memory and harness engineering into your own agents
-- 📄 **Markdown is the source of truth** — inspired by [OpenClaw](https://github.com/openclaw/openclaw). Your memories are just `.md` files — human-readable, editable, version-controllable. Milvus is a "shadow index": a derived, rebuildable cache
+- 📄 **Markdown is the source of truth** — your memories are just `.md` files, human-readable, editable, and version-controllable. Milvus is a derived, rebuildable cache
 - 🔍 **Progressive retrieval, hybrid search, smart dedup, live sync** — 3-layer recall (search → expand → transcript); dense vector + BM25 sparse + RRF reranking; SHA-256 content hashing skips unchanged content; file watcher auto-indexes in real time
+
+### Defaults
+
+- Display timestamps use `Asia/Seoul`
+- Human-facing locale defaults to `ko-KR`
+- Internal state and logs stay UTC unless a higher layer formats them
 
 ---
 

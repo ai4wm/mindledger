@@ -46,6 +46,22 @@ def test_default_config():
     assert cfg.plugins.codex.user_profile.output_file == ".memsearch/USER.md"
 
 
+def test_display_config_roundtrip(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    """Display config should round-trip through dotted keys."""
+    cfg_path = tmp_path / "config.toml"
+    monkeypatch.setattr("memsearch.config.GLOBAL_CONFIG_PATH", cfg_path)
+    monkeypatch.setattr("memsearch.config.PROJECT_CONFIG_PATH", tmp_path / "nope.toml")
+
+    set_config_value("display.timezone", "Asia/Seoul")
+    set_config_value("display.locale", "ko-KR")
+
+    cfg = resolve_config()
+    assert cfg.display.timezone == "Asia/Seoul"
+    assert cfg.display.locale == "ko-KR"
+    assert get_config_value("display.timezone", cfg) == "Asia/Seoul"
+    assert get_config_value("display.locale", cfg) == "ko-KR"
+
+
 def test_load_toml_file(tmp_path: Path):
     """load_config_file should parse a TOML file into a nested dict."""
     cfg_file = tmp_path / "config.toml"
