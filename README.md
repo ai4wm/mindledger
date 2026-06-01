@@ -40,6 +40,10 @@
 - Human-facing locale defaults to `ko-KR`
 - Internal state and logs stay UTC unless a higher layer formats them
 
+```bash
+mind config set display.timezone Asia/Seoul
+```
+
 ---
 
 ## 🧑‍💻 For Agent Users
