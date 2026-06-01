@@ -1,0 +1,5 @@
+name: mindledger
+version: 0.1.0
+description: "Read-only mindledger recall provider for Hermes Agent."
+hooks:
+  - prefetch
